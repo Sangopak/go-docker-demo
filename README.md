@@ -34,5 +34,18 @@ Please check the Dockerfile for more details
 ### Run the image 
 `docker run go-docker-demo`
 
+### Run image in detached mode
+`docker run -d -p 8080:8080 go-docker-demo`
+
+### Check all running container
+`docker ps --all`
+
+### Stop running container 
+`docker stop <container-id>`
+
+### remove container
+note you need to stop a container before removing it
+`docker rm <container-id1> <container-id2> ...`
+
 ### Docker login
 `docker login -u sangopak dckr_pat_ebpyePSwg91BysUjqstYJpUNILQ`
