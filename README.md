@@ -34,7 +34,7 @@ Please check the Dockerfile for more details
 ### Run the image 
 `docker run go-docker-demo`
 
-### Run image in detached mode
+### Run image in detached mode with hostport 8080 and container port 8080
 `docker run -d -p 8080:8080 go-docker-demo`
 
 ### Check all running container
@@ -47,5 +47,11 @@ Please check the Dockerfile for more details
 note you need to stop a container before removing it
 `docker rm <container-id1> <container-id2> ...`
 
+### Docker tag
+`docker image tag <container-id> sangopak/go-docker-demo:v1.0`
+
 ### Docker login
-`docker login -u sangopak dckr_pat_ebpyePSwg91BysUjqstYJpUNILQ`
+`docker login -u sangopak -p dckr_pat_ebpyePSwg91BysUjqstYJpUNILQ`
+
+### Docker push
+`docker push sangopak/go-docker-demo:v1.0`
