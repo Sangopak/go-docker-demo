@@ -9,7 +9,7 @@ COPY go.mod ./
 RUN go mod download
 
 # copy the go files
-COPY *.go ./
+COPY main.go ./
 
 # build go executable in docker with output
 RUN go build
