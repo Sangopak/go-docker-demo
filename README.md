@@ -77,7 +77,7 @@ docker image tag <container-id> sangopak/go-docker-demo:v1.0
 
 ### Docker login
 ```
-docker login -u sangopak -p dckr_pat_ebpyePSwg91BysUjqstYJpUNILQ
+docker login -u <docker-user> -p <docker-password>
 ```
 
 ### Docker push

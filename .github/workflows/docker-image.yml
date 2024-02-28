@@ -8,11 +8,18 @@ on:
 
 jobs:
 
-  build:
+  build-push-docker-image:
 
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+      run: docker build . --file Dockerfile --tag go-docker-demo:$(date +%m%d%Y)
+    - name: Docker login
+      env:
+        DOCKER_USER: ${{secrets.DOCKER_USER}}
+        DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
+      run: docker login -u $DOCKER_USER -p $DOCKER_PASSWORD  
+    - name: Docker push
+      run: docker push sangopak/go-docker-demo:$(date +%m%d%Y)      
