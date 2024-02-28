@@ -12,10 +12,10 @@ RUN go mod download
 COPY *.go ./
 
 # build go executable in docker with output
-RUN go build -o /go-docker-demo
+RUN go build
 
 # expose container port 8080
 EXPOSE 8080
 
 # execute the go executable 
-CMD [ "/go-docker-demo" ]
+CMD [ "/app/go-docker-demo" ]
